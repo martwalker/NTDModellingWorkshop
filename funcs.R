@@ -59,7 +59,7 @@ funcs <- list(
     ## ordinary differntial equation
     dW <- ((R0/rho)*mu2*W*mmat*dd) / ((R0^omega)*N1N2*W*mmat*dd + mu2/mu1) - mu1*W
     
-    return(list(dW,W=W, E=E, p=p, Re=Re, py=py))
+    return(list(dW,W=W, E=E, p=100*p, Re=Re, py=py))
     
   })
 }, 
