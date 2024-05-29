@@ -2,7 +2,7 @@
 ## default parameters
 ########################################
 par <-      c(R0=2,                 # basic reproduction number
-              R0_weight = 0.5,        # R0 host -> snails
+              omega = 0.5,        # R0 host -> snails
               N1N2 = 1/10,            # host-to-snail population density
               mu1= 1/5,               # adult worm mortality rate (1/mu1 =average schistosome lifespan)
               mu2= 1/(1/12),          # snail mortality rate (1/mu2= average infectious snail lifespan)

@@ -33,7 +33,7 @@ funcs <- list(
     with(as.list(c(y,par)),{
     
     # initialise numeric variable for derivative
-    dy <- numeric(1)
+    dW <- numeric(1)
     
     ## redefine y as worm burden, W
     W <- y
@@ -51,15 +51,15 @@ funcs <- list(
     p <- (1-(1+(W)/k)^-k)
     
     ## calculate the proportion of infectious snails
-    py <- mu1*R0^R0_weight*N1N2*W*mmat*dd/(mu1*R0^R0_weight*N1N2*W*mmat*dd+mu2)
+    py <- mu1*R0^omega*N1N2*W*mmat*dd/(mu1*R0^omega*N1N2*W*mmat*dd+mu2)
     
     ## calculate effective reproduction number
     Re <- (R0/rho)*mmat*dd*(1-py) 
     
     ## ordinary differntial equation
-    dy <- ((R0/rho)*mu2*W*mmat*dd) / ((R0^R0_weight)*N1N2*W*mmat*dd + mu2/mu1) - mu1*W
+    dW <- ((R0/rho)*mu2*W*mmat*dd) / ((R0^omega)*N1N2*W*mmat*dd + mu2/mu1) - mu1*W
     
-    return(list(dy,W=W, E=E, p=p, Re=Re, py=py))
+    return(list(dW,W=W, E=E, p=p, Re=Re, py=py))
     
   })
 }, 
